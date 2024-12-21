@@ -12,7 +12,9 @@ struct Segtree {
             return;
         }
         int vm = (vl + vr) / 2;
-        tree[v] = max(tree[v * 2 + 1], tree[v * 2 + 2])
+        build(v * 2 + 1, vl, vm, ar);
+        build(v * 2 + 2, vm + 1, vr, ar);
+        tree[v] = max(tree[v * 2 + 1], tree[v * 2 + 2]);
     }
     Segtree(vector<int> & ar) {
         n = size(ar);
@@ -20,13 +22,13 @@ struct Segtree {
         build(0, 0, n - 1, ar);
     }
 
-    int query(int v, int vl, int vr, int l, int r) {
+    ll query(int v, int vl, int vr, int l, int r) {
         if(r < vl || vr < l) return -INF;
         if(l <= vl && vr <= r) return tree[v];
         int vm = (vl + vr) / 2;
         return max(query(v * 2 + 1, vl, vm, l, r), query(v * 2 + 2, vm + 1, vr, l, r));
     }
-    int query(int l, int r) { return query(0, 0, n - 1, l, r); }
+    ll query(int l, int r) { return query(0, 0, n - 1, l, r); }
 
     void update(int v, int vl, int vr, int i, int x) {
         if(vl == vr) {
