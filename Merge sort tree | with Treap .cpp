@@ -123,7 +123,8 @@ struct MST_with_Treap {
 
 
 // main()
-
+// ? различные числа на отрезке
+// ! изменение в точке
 int n, q;
 cin >> n;
 vector<int> a(n), b(n);
