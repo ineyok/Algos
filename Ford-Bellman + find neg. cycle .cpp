@@ -2,19 +2,26 @@
 
 
 // Находит кратчайшие расстояния от одной вершины до всех остальных в !графе с отрицательными циклами!
+// Расстояние до вершин, достижимых из отрицательных циклов, равно -LINF
 ll dp[mxN];
 int pr[mxN], n;
 vector<vector<int>> edges;
-void find_negative_cycle(int start) {
-    fill(dp, dp + mxN, LINF);
-    dp[start] = 0;
+void Ford_Bellman(int start) {
+    fill(dist, dist + mxN, LINF);
+    dist[start] = 0;
     for(int i = 0; i < n; ++i) {
-        for (auto &el: edges) {
+        for (auto &el : edges) {
             int v = el[0], to = el[1], w = el[2];
-            if (dp[to] > dp[v] + w) {
-                dp[to] = dp[v] + w;
+            if (dist[to] > dist[v] + w) {
+                dist[to] = dist[v] + w;
                 pr[to] = v;
             }
+        }
+    }
+    for(auto & el : edges) {
+        int v = el[0], to = el[1], w = el[2];
+        if (dist[to] > dist[v] + w) {
+            dist[to] = -LINF;
         }
     }
 }
