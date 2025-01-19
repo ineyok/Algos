@@ -12,7 +12,8 @@ typedef tree<int, int, less<int>, rb_tree_tag, tree_order_statistics_node_update
 typedef tree<pair<int, int>, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> ordered_set;
 
 
-ordered_set X;
-X.insert(1);
-*X.find_by_order(1)
-X.order_of_key(-5)<<endl
+ordered_set ost;
+ost.insert(x);
+ost.erase(x);
+*ost.find_by_order(k)
+ost.order_of_key(x)
