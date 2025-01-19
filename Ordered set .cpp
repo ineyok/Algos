@@ -13,7 +13,7 @@ typedef tree<pair<int, int>, null_type, less<int>, rb_tree_tag, tree_order_stati
 
 
 ordered_set ost;
-ost.insert(x);
-ost.erase(x);
-*ost.find_by_order(k)
-ost.order_of_key(x)
+ost.insert(el);
+ost.erase(el);
+*ost.find_by_order(index)
+ost.order_of_key(el)
