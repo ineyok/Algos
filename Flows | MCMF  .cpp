@@ -4,10 +4,10 @@
 // O(n * m * U)
 
 struct MCMF {
-    int dist[mxN], inde[mxN], inq[mxN];
-    ll ans;
+    int inde[mxN], inq[mxN];
+    ll dist[mxN], ans, flow;
     MCMF() {
-        ans = 0;
+        flow = ans = 0;
         while(spfa()) {
             int delta = INF;
             for(int v = T; v != S; v = g[v][inde[v]].to) {
@@ -20,14 +20,16 @@ struct MCMF {
                 g[v][inde[v]].f -= delta;
             }
             ans += 1ll * delta * dist[T];
+            flow += delta;
         }
     }
 
     bool spfa() {
-        fill(dist, dist + mxN, INF);
+        fill(dist, dist + mxN, LINF);
         fill(inq, inq + mxN, 0);
         dist[S] = 0;
-        queue<int> q; q.push(S);
+        queue<int> q;
+        q.push(S);
         while(siz(q)) {
             int v = q.front(); q.pop();
             inq[v] = 0;
@@ -39,6 +41,6 @@ struct MCMF {
                 }
             }
         }
-        return dist[T] != INF;
+        return dist[T] != LINF;
     }
 };
