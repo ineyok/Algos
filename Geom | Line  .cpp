@@ -19,6 +19,7 @@ struct Line {
         if (C > 0) k *= -1;
         ans.A /= k, ans.B /= k, ans.C /= k;
         if (ans.A < 0 || (ans.A == 0 && ans.B < 0)) ans.A *= -1, ans.B *= -1, ans.C *= -1;
+        ans.recalc_vecs();
         return ans;
     }
 };
