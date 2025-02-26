@@ -28,4 +28,4 @@ struct LineT {
     }
 };
 
-using Line = LineT<ll>;
+using Line = LineT<X_type>;
