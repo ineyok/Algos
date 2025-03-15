@@ -23,10 +23,10 @@ struct CHT {
             vec = {{k, c, -INF, i}};
         }
         else {
-            ll xp = (c - vec.back().c) / (vec.back().k - k);
+            ll xp = ceil(c - vec.back().c, vec.back().k - k);
             while (xp <= vec.back().start) {
                 vec.pop_back();
-                xp = (c - vec.back().c) / (vec.back().k - k);
+                xp = ceil(c - vec.back().c, vec.back().k - k);
             }
             vec.push_back({k, c, xp, i});
         }
