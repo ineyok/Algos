@@ -26,7 +26,7 @@ void Ford_Bellman(int start) {
     }
 }
 
-// Находит случайный отрицательный цикл в графе
+// Находит случайный отрицательный цикл в СВЯЗНОМ графе
 vector<int> find_negative_cycle() {
     Ford_Bellman(0);
     for(int u = 0; u < n; ++u) {
