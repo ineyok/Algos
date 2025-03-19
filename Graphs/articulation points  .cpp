@@ -1,6 +1,6 @@
 // O(n + m)
 
-// Поиск точек сочленения
+// Точки сочленения
 int used[mxN], depth[mxN], up[mxN];
 set<int> ap;
 void dfs_ap(int v, int p = -1) {
