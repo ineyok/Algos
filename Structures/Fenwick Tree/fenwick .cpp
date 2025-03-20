@@ -1,15 +1,16 @@
+// O(log(n)) на запрос
+
 // ? сумма на отрезке
 // ! прибавление в точке
 
-
-struct Fenwick_tree {
+struct Fenwick {
     int n;
     vector<ll> tree;
-    Fenwick_tree(int n_) {
+    Fenwick(int n_) {
         n = n_;
         tree.resize(n);
     }
-    Fenwick_tree(vector<int> & ar) {
+    Fenwick(vector<int> & ar) {
         n = size(ar);
         tree.resize(n);
         for(int i = 0; i < n; ++i)
