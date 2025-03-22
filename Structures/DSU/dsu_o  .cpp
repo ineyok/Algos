@@ -1,13 +1,13 @@
 // O(log(n)) на запрос
 
 // DSU с откатами
+
 struct DSU_o {
-    int n;
     vector<int> pr, sz, vers;
     vector<vector<int>> mem;
 
     DSU_o()=default;
-    DSU_o(int n) : n(n), pr(n), sz(n, 1) {
+    DSU_o(int n) : pr(n), sz(n, 1) {
         iota(all(pr), 0);
     }
 
