@@ -10,7 +10,7 @@ for(int i = 0; i < t; ++i) {
     zap[i] = {l, r, i};
 }
 sort(all(zap), [&](vector<int>& a, vector<int>& b) {
-    if(a[0] / K != b[0] / K) return a[0] / K < b[0] / K;
+    if(a[0] / K != b[0] / K) return a[0] < b[0];
     return a[1] < b[1];
 });
 int l = 0, r = -1;
