@@ -4,7 +4,7 @@ using ll = long long;
 mt19937 rnd();
 #define all(x) x.begin(), x.end()
 #define siz(x) int(x.size())
-#define ceil(a, b) (((a) + (b) - 1) / b)
+#define ceil(a, b) (((a) + (b) - 1) / (b))
 const int INF = 2e9 + 7;
 const ll LINF = 1e18 + 7;
 const int MOD = 1e9 + 7;
