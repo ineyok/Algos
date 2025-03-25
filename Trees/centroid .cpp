@@ -1,6 +1,7 @@
 // O((n + m) * log(n))
 
 // Центроидная декомпозиция
+
 vector<int> g[mxN], order;
 int lvl[mxN], cent[mxN][LG], sz[mxN];
 
