@@ -1,6 +1,3 @@
-// структура окружности / круга
-// Point предпологается double
-
 struct Circle {
     Point o;
     double r;
