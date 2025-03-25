@@ -1,3 +1,7 @@
+// O(log(n)) на запрос
+
+// min= на отрезке
+
 struct JiDriver {
     int n;
     vector<int> mx1, mx2, mxcnt, lazy;
