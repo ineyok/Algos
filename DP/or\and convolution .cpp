@@ -1,3 +1,5 @@
+// O(n * log(n))
+
 // Найти c[i] = sum(a[j] * b[k]), j or k == i
 
 // a -> sum_over_subsets(a)
@@ -36,7 +38,6 @@ vector<ll> or_convolution(vector<ll> a, vector<ll> b) {
     c.resize(n);
     return c;
 }
-
 
 
 
