@@ -72,3 +72,63 @@ for(auto & el : zap) {
 
 // МО на дереве - Веса на вершинах
 
+vector<int> g[mxN], euler;
+int fst[mxN], lst[mxN], timer = -1, total_cnt[mxN], cnt[mxN];
+void dfs(int v, int p) {
+    fst[v] = ++timer;
+    fst[v] = siz(euler);
+    euler.push_back(v);
+    total_cnt[v]++;
+    for(int to : g[v]) {
+        if(to == p) continue;
+        dfs(to, v);
+        lst[v] = siz(euler);
+        euler.push_back(v);
+        total_cnt[v]++;
+    }
+    if(v && siz(g[v]) == 1) {
+        lst[v] = siz(euler);
+        euler.push_back(v);
+        total_cnt[v]++;
+    }
+}
+
+void add(int i) {
+    int v = euler[i];
+    if(!cnt[v]) {
+        // add v
+    }
+    else if(cnt[v] + 1 == total_cnt[v]) {
+        // del v
+    }
+    cnt[v]++;
+}
+
+void del(int i) {
+    int v = euler[i];
+    if(cnt[v] == total_cnt[v]) {
+        // add v
+    }
+    else if(cnt[v] == 1) {
+        // del v
+    }
+    cnt[v]--;
+}
+
+//main()
+vector<vector<int>> zap(q);
+for(int i = 0; i < q; ++i) {
+    int v, u;
+    cin >> v >> u, v--, u--;
+    int l, r;
+    if(fst[v] < fst[u]) {
+        l = fst[v], r = fst[u];
+        if(lst[v] < fst[u]) l++;
+    }
+    else {
+        l = fst[u], r = fst[v];
+        if(lst[u] < fst[v]) l++;
+    }
+    zap[i] = {l, r, i};
+}
+//...
