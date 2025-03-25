@@ -23,6 +23,7 @@ void dfs_ap(int v, int p = -1) {
     if(p == 1 && kids > 1) ap.insert(v);
 }
 
+
 // Покраска ребёр по компонентам вершинной двусвязности
 
 map<pair<int, int>, int> clr;
