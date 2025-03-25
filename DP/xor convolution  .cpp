@@ -1,3 +1,5 @@
+// O(n * log(n))
+
 // Найти c[i] = sum(a[j] * b[k]), j ^ k == i
 
 // a -> hadamard_transform(a)
