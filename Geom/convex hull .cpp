@@ -1,6 +1,7 @@
+// O(n * log(n))
+
 // Построение выпуклой оболочки алгоритмом Эндрю
 // Точки в порядке обхода по часовой стрелке
-// O(n * log(n))
 
 vector<Point> build_convex_hull(vector<Point> vec) {
     sort(all(vec));
