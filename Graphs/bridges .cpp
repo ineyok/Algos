@@ -1,6 +1,7 @@
 // O(n + m)
 
 // Мосты в графе
+
 set<pair<int, int>> br;
 int used[mxN], depth[mxN], up[mxN];
 
@@ -28,6 +29,7 @@ for(int v = 0; v < n; ++v) {
 
 
 // Компоненты реберной двусвязности
+
 int comp[mxN];
 void dfs_comp(int v, int k) {
     if(comp[v]) return;
