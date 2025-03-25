@@ -1,6 +1,7 @@
 // O(n + m)
 
 // Точки сочленения
+
 int used[mxN], depth[mxN], up[mxN];
 set<int> ap;
 void dfs_ap(int v, int p = -1) {
@@ -23,6 +24,7 @@ void dfs_ap(int v, int p = -1) {
 }
 
 // Покраска ребёр по компонентам вершинной двусвязности
+
 map<pair<int, int>, int> clr;
 int mxc;
 void dfs_paint(int v, int p, int color) {
