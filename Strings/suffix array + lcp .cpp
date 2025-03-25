@@ -29,4 +29,16 @@ for(int k = 0; (1 << k) < n; ++k) {
         c[p[i]] = c[p[i - 1]] + (a[i].first != a[i - 1].first);
     }
 }
-// порядок в P
+
+
+// Наибольший общий префикс всех соседних суффиксов
+
+vector<int> lcp(n - 1);
+int k = 0;
+for (int i = 0; i < n - 1; ++i) {
+    int j = p[c[i] - 1];
+    while (s[i + k] == s[j + k])
+        k++;
+    lcp[c[i] - 1] = k;
+    k = max(0, k - 1);
+}
