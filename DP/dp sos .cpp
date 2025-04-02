@@ -1,6 +1,6 @@
 // O(n * log n)
 
-// sum of subsets
+// sum over subsets
 // sos[bit][mask] - сумма по подмаскам mask, которые могут отличаться от mask в первых bit битах
 
 for(int bit = 0; bit < K; ++bit) {
@@ -10,8 +10,8 @@ for(int bit = 0; bit < K; ++bit) {
     }
 }
 
-// sum of supersets
-// sos[bit][mask] - ...
+
+// sum over supersets
 
 for(int bit = 0; bit < K; ++bit) {
     for(int mask = 0; mask < (1 << K); ++mask) {
