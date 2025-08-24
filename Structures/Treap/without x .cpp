@@ -14,17 +14,17 @@ struct Treap {
     int get_mn(Node * t) { return (t ? t->mn : INF); }
 
     void push(Node * t) {
-        if(!t) return;
-        t->mn += t->lazy_add;
-        if(t->l) t->l->lazy_add += t->lazy_add;
-        if(t->r) t->r->lazy_add += t->lazy_add;
-        t->lazy_add = 0;
-        if(t->lazy_rev) {
-            swap(t->l, t->r);
-            if(t->l) t->l->lazy_rev ^= 1;
-            if(t->r) t->r->lazy_rev ^= 1;
-            t->lazy_rev = 0;
+        if (!t) return;
+        if (t->l) {
+            t->l->add += t->add;
+            t->l->rev ^= t->rev;
         }
+        if (t->r) {
+            t->r->add += t->add;
+            t->r->rev ^= t->rev;
+        }
+        if (t->rev) swap(t->l, t->r);
+        t->add = t->rev = 0;
     }
 
     void update(Node * t) {
